@@ -27,6 +27,6 @@ if chosen_color:
     consider_list = my_dataframe.filter(col("COLOR_OR_STYLE") == chosen_color).select(col("UPSELL_PRODUCT_DESC")).collect()
 
     st.image(color_row[0]['FILE_URL'], use_container_width=True)
-    st.subheader(price_row[0]['PRICE'])
+    st.subheader(f'Price: {price_row[0]['PRICE']}')
     st.write(size_list_row[0]['SIZE_LIST'], use_container_width=True)
     st.write(consider_list[0]['UPSELL_PRODUCT_DESC'], use_container_width=True)
